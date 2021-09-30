@@ -12,7 +12,7 @@ Install tensorflow (v1.15.2)
 
 Install keras (2.2.4)
 
-Install matplotlib, tqdm, pickle
+Install matplotlib, tqdm
 
 
 ## Reproducing Results
