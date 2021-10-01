@@ -13,7 +13,7 @@ Install python for your system (v3.6 or later)
 
 Install tensorflow (v1.15.2)
 
-Install keras (2.2.4)
+Install keras (v2.2.4)
 
 Install matplotlib, tqdm, jupyter
 
