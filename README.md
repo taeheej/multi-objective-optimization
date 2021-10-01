@@ -4,6 +4,7 @@ Companion code for the ICLR2022 paper: Multi-objective optimization for Hardware
 Neural Architecture Search
 
 > **Note:** You do not need a GPU to run this code. Using a modern CPU, you can execute this code within 1 minute.
+> 
 > **Note:** Some codes are copied from https://github.com/mit-han-lab/once-for-all.
 
 ## Running the Code
@@ -17,6 +18,7 @@ Install keras (2.2.4)
 Install matplotlib, tqdm, jupyter
 
 > **Note:** Install tensorboard if the warning message of "Limited tf.compat.v2.summary API due to missing TensorBoard installation" comes out
+> 
 > **Note:** Install 'h5py==2.10.0' if the error message of "AttributeError: 'str' object has no attribute 'decode'" comes out
 
 
