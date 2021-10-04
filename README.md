@@ -5,7 +5,7 @@ Neural Architecture Search
 
 > **Note:** You do not need a GPU to run this code. Using a modern CPU, you can execute this code within 1 minute.
 > 
-> **Note:** Some codes are copied from https://github.com/mit-han-lab/once-for-all.
+> **Note:** Codes are inspired from https://github.com/mit-han-lab/once-for-all.
 
 ## Running the Code
 
