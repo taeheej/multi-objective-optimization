@@ -29,5 +29,5 @@ we provide tutorial notebook "Hands-on-Tutorial1.ipynb'
 To reproduce search results using multi-objective optimization algorithm, 
 we provide tutorial notebook "Hands-on_Tutorial2.ipynb'
 
-please clone this repository to your computer and start jupyter notebook to run these tutorial notebooks.
+Please clone this repository to your computer and start jupyter notebook to run these tutorial notebooks.
 
