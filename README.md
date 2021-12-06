@@ -1,7 +1,6 @@
 # multi-objective-optimization
 
-Companion code for the ICLR2022 paper: Multi-objective optimization for Hardware-aware
-Neural Architecture Search
+Companion code for the ICICT2022 paper: Lite Hardware-aware Neural Architecture Search with a grid-based selection
 
 > **Note:** You do not need a GPU to run this code. Using a modern CPU, you can execute this code within 1 minute.
 > 
@@ -23,10 +22,10 @@ Install matplotlib, tqdm, jupyter
 
 
 ## Reproducing Results
-To reproduce search results using mono-objective optimized search with hardware constraint, 
+To reproduce search results using single-objective optimization with hardware constraint, 
 we provide tutorial notebook "Hands-on-Tutorial1.ipynb'
 
-To reproduce search results using multi-objective optimization algorithm, 
+To reproduce search results using multi-objective optimization with a grid-based selection method, 
 we provide tutorial notebook "Hands-on_Tutorial2.ipynb'
 
 Please clone this repository to your computer and start jupyter notebook to run these tutorial notebooks.
