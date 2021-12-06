@@ -1,7 +1,7 @@
 """
-This is a hands-on tutorial for multi-ojbective optimization for Hardware-Aware Neural Architecture Search.
+This is a hands-on tutorial for Lite Hardware-aware Neural Architecture Search with a grid-based selection.
 
-we will demonstrate how to get search results using multi-objective optimization algorithm.
+we will demonstrate how to get search results using multi-objective optimization with a grid-based selection.
 """
 #%% import packages
 
