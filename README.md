@@ -1,6 +1,6 @@
 # multi-objective-optimization
 
-Companion code for the ICICT2022 paper: Lite Hardware-aware Neural Architecture Search with a grid-based selection
+Companion code for the ICICT2022 paper: Hardware-aware Neural Architecture Search with segmentation-based selection
 
 > **Note:** You do not need a GPU to run this code. Using a modern CPU, you can execute this code within 1 minute.
 > 
