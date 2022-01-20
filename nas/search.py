@@ -1,3 +1,17 @@
+# Copyright 2019 Xilinx Inc.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 from nas.evolution import random_arch, mutate_arch, crossover_arch, conf_onehot
 import numpy as np
 from tqdm import tqdm
@@ -22,30 +36,36 @@ class search(object):
             sample = random_arch()  # dictionary[l,c,sz]
             sample_decode = conf_onehot(sample)  #[1,396]
             latency = self.latency_predictor.predict(sample_decode)[0][0]
-            if not self.constraint:
+            if self.constraint==0:            
                 return sample, latency
-            elif latency <= self.constraint:
-                return sample, latency
+            elif self.constraint > 0:
+                if latency <= self.constraint: 
+                    return sample, latency
+
             
     def mutate_sample(self, sample):
         while True:
             new_sample = mutate_arch(sample, self.mutate_prob)               
             sample_decode = conf_onehot(new_sample)  #[1,396]
             latency = self.latency_predictor.predict(sample_decode)[0][0]
-            if not self.constraint:
+            if self.constraint==0:            
                 return new_sample, latency
-            elif latency <= self.constraint:
-                return new_sample, latency
+            elif self.constraint > 0:
+                if latency <= self.constraint: 
+                    return new_sample, latency
+            
             
     def crossover_sample(self, sample1, sample2):
         while True:
             new_sample = crossover_arch(sample1,sample2)
             sample_decode = conf_onehot(new_sample)  #[1,396]
             latency = self.latency_predictor.predict(sample_decode)[0][0]
-            if not self.constraint:
+            if self.constraint==0:            
                 return new_sample, latency
-            elif latency <= self.constraint:
-                return new_sample, latency
+            elif self.constraint >0:
+                if latency <= self.constraint: 
+                    return new_sample, latency
+
             
     def evolution_search(self):
         # Generate random population: population is seeded
@@ -115,7 +135,7 @@ class search(object):
             
     
 class search_multi(search):
-    def upfront(self, X, resolution = 20):
+    def segmentation(self, X, resolution = 20):
         xstep = (np.max(X[:,1])-np.min(X[:,1]))/resolution
         X_xmin = np.min(X[:,1])
         xrange = []
@@ -175,8 +195,10 @@ class search_multi(search):
             # tournament (combine current population and previous tops)
             population = np.array(population)
             population = np.concatenate([population,parents])
+
+            # segmentation-based selection
             scores = np.array(scores)
-            _,p_idx = self.upfront(scores)
+            _,p_idx = self.segmentation(scores)
             parents = population[p_idx]
 
                  
