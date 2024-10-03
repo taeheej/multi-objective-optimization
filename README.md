@@ -25,7 +25,7 @@ Install matplotlib, tqdm, jupyter
 To reproduce search results using single-objective optimization with hardware constraint, 
 we provide tutorial notebook "Hands-on-Tutorial1.ipynb'
 
-To reproduce search results using multi-objective optimization with a grid-based selection method, 
+To reproduce search results using multi-objective optimization with a segmentation-based selection method, 
 we provide tutorial notebook "Hands-on_Tutorial2.ipynb'
 
 Please clone this repository to your computer and start jupyter notebook to run these tutorial notebooks.
